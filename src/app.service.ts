@@ -1,5 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common'
 import productsData from '../data/products.json'
+import { CreateProductDto, UpdateProductDto } from './app.dto'  // ← AÑADIR
 
 export interface Product {
   id: string
@@ -12,6 +13,10 @@ export interface Product {
 export class AppService {
   private readonly products: Product[] = productsData
 
+  getHello(): string {
+    return 'Hello World!';
+  }
+
   getProducts(page = 1, limit = 10): { items: Product[]; total: number } {
     const start = (page - 1) * limit
     const end   = start + limit
@@ -23,13 +28,11 @@ export class AppService {
 
   getProductById(id: string): Product {
     const prod = this.products.find(p => p.id === id)
-    if (!prod) {
-      throw new NotFoundException(`Producto con id "${id}" no encontrado`)
-    }
+    if (!prod) throw new NotFoundException(`Producto con id "${id}" no encontrado`)
     return prod
   }
 
-  createProduct(dto: CreateProductDto): Product {
+  createProduct(dto: CreateProductDto): Product {          
     const newProd: Product = {
       id: Date.now().toString(),
       ...dto,
@@ -38,7 +41,7 @@ export class AppService {
     return newProd;
   }
 
-  updateProduct(id: string, dto: UpdateProductDto): Product {
+  updateProduct(id: string, dto: UpdateProductDto): Product {  
     const idx = this.products.findIndex(p => p.id === id);
     if (idx < 0) throw new NotFoundException(`Producto ${id} no encontrado`);
     const updated = { ...this.products[idx], ...dto };
@@ -51,5 +54,4 @@ export class AppService {
     if (idx < 0) throw new NotFoundException(`Producto ${id} no encontrado`);
     this.products.splice(idx, 1);
   }
-
 }

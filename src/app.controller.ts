@@ -3,11 +3,12 @@ import {
   Param, Query, Body, NotFoundException
 } from '@nestjs/common';
 import { AppService, Product } from './app.service';
-import { CreateProductDto, UpdateProductDto } from './app.dto';
+import { CreateProductDto, UpdateProductDto } from './app.dto';  // ← AÑADIR
 
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
+
 
   @Get('products')
   getAllProducts(
@@ -23,14 +24,14 @@ export class AppController {
   }
 
   @Post('products')
-  createProduct(@Body() dto: CreateProductDto): Product {
+  createProduct(@Body() dto: CreateProductDto): Product {          
     return this.appService.createProduct(dto);
   }
 
   @Put('products/:id')
   updateProduct(
     @Param('id') id: string,
-    @Body() dto: UpdateProductDto
+    @Body() dto: UpdateProductDto                             
   ): Product {
     return this.appService.updateProduct(id, dto);
   }
