@@ -1,0 +1,182 @@
+[
+  {
+    "id": "1",
+    "name": "Pet Food Classic",
+    "price": 12.99,
+    "description": "Alimento nutritivo para perros de todas las edades.",
+    "image": "https://placekitten.com/300/300",
+    "category": "Alimentos",
+    "inStock": true
+  },
+  {
+    "id": "2",
+    "name": "Cat Treats Deluxe",
+    "price": 8.49,
+    "description": "Bocaditos ricos para premiar a tu gato.",
+    "image": "https://placekitten.com/301/300",
+    "category": "Alimentos",
+    "inStock": true
+  },
+  {
+    "id": "3",
+    "name": "Dog Chew Toy",
+    "price": 5.99,
+    "description": "Juguete resistente para morder y entretener.",
+    "image": "https://placekitten.com/302/300",
+    "category": "Juguetes",
+    "inStock": true
+  },
+  {
+    "id": "4",
+    "name": "Cat Scratching Post",
+    "price": 25.50,
+    "description": "Rascador alto con plataforma de descanso.",
+    "image": "https://placekitten.com/303/300",
+    "category": "Juguetes",
+    "inStock": false
+  },
+  {
+    "id": "5",
+    "name": "Pet Bed Cozy",
+    "price": 29.99,
+    "description": "Cama mullida para perros pequeños y medianos.",
+    "image": "https://placekitten.com/304/300",
+    "category": "Accesorios",
+    "inStock": true
+  },
+  {
+    "id": "6",
+    "name": "Cat Hammock",
+    "price": 19.99,
+    "description": "Hamaca segura para ventanas y reposo.",
+    "image": "https://placekitten.com/305/300",
+    "category": "Accesorios",
+    "inStock": true
+  },
+  {
+    "id": "7",
+    "name": "Dog Leash Reflex",
+    "price": 14.75,
+    "description": "Correa reflectante para paseos nocturnos.",
+    "image": "https://placekitten.com/306/300",
+    "category": "Accesorios",
+    "inStock": true
+  },
+  {
+    "id": "8",
+    "name": "Pet Collar Comfort",
+    "price": 9.99,
+    "description": "Collar ajustable con hebilla de liberación rápida.",
+    "image": "https://placekitten.com/307/300",
+    "category": "Accesorios",
+    "inStock": false
+  },
+  {
+    "id": "9",
+    "name": "Dog Shampoo Fresh",
+    "price": 11.25,
+    "description": "Champú refrescante y hipoalergénico.",
+    "image": "https://placekitten.com/308/300",
+    "category": "Higiene",
+    "inStock": true
+  },
+  {
+    "id": "10",
+    "name": "Cat Litter Premium",
+    "price": 13.50,
+    "description": "Arena aglomerante de alta absorción.",
+    "image": "https://placekitten.com/309/300",
+    "category": "Higiene",
+    "inStock": true
+  },
+  {
+    "id": "11",
+    "name": "Dog Toothbrush Kit",
+    "price": 7.99,
+    "description": "Kit de cepillo y pasta dental para perros.",
+    "image": "https://placekitten.com/310/300",
+    "category": "Higiene",
+    "inStock": true
+  },
+  {
+    "id": "12",
+    "name": "Pet Grooming Glove",
+    "price": 8.99,
+    "description": "Guante para eliminar pelo suelto al acariciar.",
+    "image": "https://placekitten.com/311/300",
+    "category": "Higiene",
+    "inStock": false
+  },
+  {
+    "id": "13",
+    "name": "Dog Raincoat",
+    "price": 22.00,
+    "description": "Impermeable con capucha para días lluviosos.",
+    "image": "https://placekitten.com/312/300",
+    "category": "Ropa",
+    "inStock": true
+  },
+  {
+    "id": "14",
+    "name": "Cat Sweater Warm",
+    "price": 17.50,
+    "description": "Suéter cálido y suave para gatos pequeños.",
+    "image": "https://placekitten.com/313/300",
+    "category": "Ropa",
+    "inStock": true
+  },
+  {
+    "id": "15",
+    "name": "Pet Bandana",
+    "price": 4.99,
+    "description": "Pañuelo de algodón en distintos estampados.",
+    "image": "https://placekitten.com/314/300",
+    "category": "Ropa",
+    "inStock": true
+  },
+  {
+    "id": "16",
+    "name": "Dog Backpack",
+    "price": 35.00,
+    "description": "Mochila para que tu perro lleve sus propias cosas.",
+    "image": "https://placekitten.com/315/300",
+    "category": "Accesorios",
+    "inStock": false
+  },
+  {
+    "id": "17",
+    "name": "Cat Tunnel Play",
+    "price": 18.99,
+    "description": "Túnel de juego plegable para gatos.",
+    "image": "https://placekitten.com/316/300",
+    "category": "Juguetes",
+    "inStock": true
+  },
+  {
+    "id": "18",
+    "name": "Dog Ball Fetch",
+    "price": 6.75,
+    "description": "Pelota resistente para lanzar y traer.",
+    "image": "https://placekitten.com/317/300",
+    "category": "Juguetes",
+    "inStock": true
+  },
+  {
+    "id": "19",
+    "name": "Pet Travel Carrier",
+    "price": 45.00,
+    "description": "Transportín ventilado y seguro para viajes.",
+    "image": "https://placekitten.com/318/300",
+    "category": "Accesorios",
+    "inStock": true
+  },
+  {
+    "id": "20",
+    "name": "Cat Water Fountain",
+    "price": 39.99,
+    "description": "Fuente automática para mantener el agua fresca.",
+    "image": "https://placekitten.com/319/300",
+    "category": "Accesorios",
+    "inStock": false
+  }
+]
