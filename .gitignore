@@ -5,6 +5,10 @@
 
 node_modules
 
+src/config/serviceAccountKey.json
+
+serviceAccountKey.json
+
 # Logs
 logs
 *.log
