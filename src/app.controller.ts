@@ -1,29 +1,43 @@
-// backend/src/app.controller.ts
-import { Controller, Get, Query, Param } from '@nestjs/common'
-import { AppService, Product } from './app.service'
+import {
+  Controller, Get, Post, Put, Delete,
+  Param, Query, Body, NotFoundException
+} from '@nestjs/common';
+import { AppService, Product } from './app.service';
+import { CreateProductDto, UpdateProductDto } from './app.dto';
 
-@Controller()     // usa la ruta raíz
+@Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  // GET /products?page=1&limit=10
   @Get('products')
   getAllProducts(
     @Query('page')  page:  string = '1',
     @Query('limit') limit: string = '10',
   ): { items: Product[]; total: number } {
-    return this.appService.getProducts(+page, +limit)
+    return this.appService.getProducts(+page, +limit);
   }
 
-  // GET /products/:id
   @Get('products/:id')
-  getProduct(
-    @Param('id') id: string,
-  ): Product {
-    return this.appService.getProductById(id)
+  getProduct(@Param('id') id: string): Product {
+    return this.appService.getProductById(id);
   }
-  getHello(): string {
-  return 'API Pet Supply!';
-}
 
+  @Post('products')
+  createProduct(@Body() dto: CreateProductDto): Product {
+    return this.appService.createProduct(dto);
+  }
+
+  @Put('products/:id')
+  updateProduct(
+    @Param('id') id: string,
+    @Body() dto: UpdateProductDto
+  ): Product {
+    return this.appService.updateProduct(id, dto);
+  }
+
+  @Delete('products/:id')
+  deleteProduct(@Param('id') id: string) {
+    this.appService.deleteProduct(id);
+    return { success: true };
+  }
 }

@@ -1,4 +1,3 @@
-// backend/src/app.service.ts
 import { Injectable, NotFoundException } from '@nestjs/common'
 import productsData from '../data/products.json'
 
@@ -13,7 +12,6 @@ export interface Product {
 export class AppService {
   private readonly products: Product[] = productsData
 
-  /** Devuelve la página de productos y el total */
   getProducts(page = 1, limit = 10): { items: Product[]; total: number } {
     const start = (page - 1) * limit
     const end   = start + limit
@@ -23,7 +21,6 @@ export class AppService {
     }
   }
 
-  /** Devuelve un sólo producto o lanza 404 */
   getProductById(id: string): Product {
     const prod = this.products.find(p => p.id === id)
     if (!prod) {
@@ -32,5 +29,27 @@ export class AppService {
     return prod
   }
 
+  createProduct(dto: CreateProductDto): Product {
+    const newProd: Product = {
+      id: Date.now().toString(),
+      ...dto,
+    };
+    this.products.push(newProd);
+    return newProd;
+  }
+
+  updateProduct(id: string, dto: UpdateProductDto): Product {
+    const idx = this.products.findIndex(p => p.id === id);
+    if (idx < 0) throw new NotFoundException(`Producto ${id} no encontrado`);
+    const updated = { ...this.products[idx], ...dto };
+    this.products[idx] = updated;
+    return updated;
+  }
+
+  deleteProduct(id: string): void {
+    const idx = this.products.findIndex(p => p.id === id);
+    if (idx < 0) throw new NotFoundException(`Producto ${id} no encontrado`);
+    this.products.splice(idx, 1);
+  }
 
 }
