@@ -11,7 +11,6 @@ interface Product {
 
 @Injectable()
 export class ProductsService {
-  // Reutiliza el array del JSON
   private readonly products: Product[] = productsData
 
   findAll(page = 1, limit = 10) {
